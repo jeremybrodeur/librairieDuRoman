@@ -32,7 +32,7 @@ class AdminController extends Controller
     {
         $req->validate([
             'name' => 'required',
-            'username' => 'required|email|unique:users',
+            'username' => 'required',
             'isAdmin' => 'required'
         ]);
         $user = User::where('id', '=', $req->id)->first();
@@ -43,8 +43,11 @@ class AdminController extends Controller
         } else {
             $user->isAdmin = false;
         }
+        $user->validate([
+            'username' => 'unique:users'
+        ]);
         $save = $user->save();
-        Log::channel('custom')->info("[".date("Y-m-d h:i:sa")."]"." L'admin ".$user->username." à modifé le livre avec le id ".$req->id);
+        Log::channel('custom')->info(" L'admin ".$user->username." à modifé le user avec le id ".$req->id);
         if ($save) {
             return back()->with('success', 'User updated successfully');
         } else {
