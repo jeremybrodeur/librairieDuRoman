@@ -44,8 +44,8 @@ class AdminController extends Controller
             $user->isAdmin = false;
         }
         $save = $user->save();
+        Log::channel('custom')->info("[".date("Y-m-d h:i:sa")."]"." L'admin ".$user->username." à modifé le livre avec le id ".$req->id);
         if ($save) {
-            Log::channel('custom')->info("[".date("Y-m-d h:i:sa")."]"." L'admin ".$user->username." à modifé le livre avec le id ".$req->id);
             return back()->with('success', 'User updated successfully');
         } else {
             return back()->with('fail', 'Something went wrong, try again later.');
