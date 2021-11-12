@@ -1,0 +1,136 @@
+body {
+    /*font-family: 'Roboto', sans-serif;*/
+    font-family: 'Quicksand', sans-serif;
+    position: relative;
+    min-height: 100vh;
+}
+
+img {
+    height: 100px;
+    width: 100px;
+
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 600;
+}
+
+a:hover {
+    color: #777777;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+    text-decoration: none;
+}
+
+header {
+    background-color: #E9ECEF;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    border-bottom: 4px solid #555555;
+
+
+}
+
+.btn {
+    width: 100px !important;
+}
+
+footer {
+    background-color: #555555;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-bottom: 4px solid #555555;
+    height: 100px;
+    line-height: 60px;
+}
+
+.nav {
+    text-align: center;
+
+}
+
+#listePage {
+    padding-bottom: 170px;
+}
+
+td>img {
+    height: 100px;
+    width: 50px;
+}
+
+#cart {
+    height: 30px;
+    width: 30px;
+}
+
+span {
+    font-weight: 700;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    padding: 10px 5px;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    right: 100;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    border-radius: 10px;
+    margin-left: 50px;
+}
+
+.dropdown:hover {
+    cursor: pointer;
+}
+
+header {
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+#formLivre,
+#listeLivre,
+#formUser,
+#dashboard {
+    padding-bottom: 200px;
+}
+
+.badge {
+    padding-left: 9px;
+    padding-right: 9px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+.label-warning[href],
+.badge-danger[href] {
+  background-color: #c67605;
+}
+#badge {
+    font-size: 12px;
+    color: #fff;
+    padding: 0 5px;
+    vertical-align: top;
+    margin-left: -10px; 
+}
