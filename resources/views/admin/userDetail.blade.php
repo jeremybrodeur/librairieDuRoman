@@ -21,7 +21,7 @@
                     </div>
                     <div class="form-group">
                         <label for="username">Username</label>
-                        <input class="form-control" type="email" name="username" id="username" value="{{ $user->username }}">
+                        <input readonly class="form-control" type="email" name="username" id="username" value="{{ $user->username }}">
                         <span class="text-danger">@error('username'){{ $message }}@enderror</span>
 
                         </div>
