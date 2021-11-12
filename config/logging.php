@@ -116,7 +116,7 @@ return [
         'custom' => [
             'driver' => 'single',
             'path' => storage_path('logs/journal.log'),
-            'level' => 'critical'
+            'level' => env('LOG_LEVEL', 'debug'),
         ],
     ],
 
