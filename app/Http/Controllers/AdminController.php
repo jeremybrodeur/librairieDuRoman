@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Book;
 use App\Models\User;
+use DateTime;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 class AdminController extends Controller
 {//Admin
     function dashboard()
@@ -43,6 +45,7 @@ class AdminController extends Controller
         }
         $save = $user->save();
         if ($save) {
+            Log::channel('custom')->info("[".date("Y-m-d h:i:sa")."]"." L'admin ".$user->username." à modifé le livre avec le id ".$req->id);
             return back()->with('success', 'User updated successfully');
         } else {
             return back()->with('fail', 'Something went wrong, try again later.');
