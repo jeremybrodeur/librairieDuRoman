@@ -43,9 +43,6 @@ class AdminController extends Controller
         } else {
             $user->isAdmin = false;
         }
-        $user->validate([
-            'username' => 'unique:users'
-        ]);
         $save = $user->save();
         Log::channel('custom')->info(" L'admin ".$user->username." à modifé le user avec le id ".$req->id);
         if ($save) {
