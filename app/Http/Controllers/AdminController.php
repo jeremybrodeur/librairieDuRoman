@@ -59,8 +59,8 @@ class AdminController extends Controller
     function createUser(Request $req)
     {
         $req->validate([
-            'lname' => ['required', 'regex:/^[a-zA-Z ]+$/'],
-            'fname' => ['required', 'regex:/^[a-zA-Z ]+$/'],
+            'lname' => ['required', 'not_regex:/^[0-9]+$/'],
+            'fname' => ['required', 'not_regex:/^[0-9]+$/'],
             'username' => 'required|email|unique:users',
             'isAdmin' => 'required',
             'password' => ['required', 'min:8', 'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/']
