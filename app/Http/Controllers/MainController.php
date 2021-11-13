@@ -29,7 +29,7 @@ class MainController extends Controller
         $req->validate([
             'name' => 'required',
             'username' => 'required|email|unique:users',
-            'password' => 'required|min:5|max:16|confirmed'
+            'password' => ['required', 'min:8' ,'confirmed', 'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/']
         ]);
         $user = new User();
         $user->name = $req->name;
