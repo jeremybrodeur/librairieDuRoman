@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 
 class MainController extends Controller
 {
@@ -37,7 +38,7 @@ class MainController extends Controller
         $save = $user->save();
 
         if ($save) {
-            Log::channel('custom')->info(" L'usager ".$req->username." à été créé");
+            Log::channel('custom')->info(" The user ".$req->username." has been created.");
             return back()->with('success', 'User registered successfully');
         } else {
             return back()->with('fail', 'Something went wrong, try again later.');
@@ -61,11 +62,11 @@ class MainController extends Controller
                 if ($userInfo->isAdmin == 1) {
                     return redirect('admin/dashboard');
                 } else {
-                    Log::channel('custom')->info(" L'usager ".$req->session()->put('username')." logged in successfully.");
+                    Log::channel('custom')->info(" The user ".$req->session()->put('username')." logged in successfully.");
                     return redirect('/');
                 }
             } else {
-                Log::channel('custom')->info(" L'usager ".$req->session()->put('username')." entered a bad password.");
+                Log::channel('custom')->info(" The user ".$req->session()->put('username')." entered a bad password.");
                 return back()->with('fail', 'Password incorrect.');
             }
         }
@@ -73,7 +74,7 @@ class MainController extends Controller
     function logout(Request $req)
     {
         if ($req->session()->exists('LoggedUser')) {
-            Log::channel('custom')->info(" L'usager ".$req->session()->put('username')." logged out.");
+            Log::channel('custom')->info(" The user ".$req->session()->get('username')." logged out.");
             $req->session()->pull('LoggedUser');
             $req->session()->pull('UserType');
             $req->session()->pull('failAccess');

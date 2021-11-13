@@ -45,7 +45,7 @@ class AdminController extends Controller
         }
         $save = $user->save();
         if ($save) {
-            Log::channel('custom')->info(" L'admin ".$req->session()->get('username')." à modifé le user avec le id ".$req->id);
+            Log::channel('custom')->info(" The admin ".$req->session()->get('username')." updated the user with user_id: ".$req->id.".");
             return back()->with('success', 'User updated successfully');
         } else {
             return back()->with('fail', 'Something went wrong, try again later.');
@@ -76,7 +76,7 @@ class AdminController extends Controller
         $save = $user->save();
 
         if ($save) {
-            Log::channel('custom')->info(" L'admin ".$req->session()->get('username')." à créé un user avec le id ".$req->id);
+            Log::channel('custom')->info(" The admin ".$req->session()->get('username')." created a user with user_id ".$req->id.".");
             return back()->with('success', 'User registered successfully');
         } else {
             return back()->with('fail', 'Something went wrong, try again later.');
@@ -86,7 +86,7 @@ class AdminController extends Controller
     {
         $deletedRows = User::where('id', $id)->delete();
         if ($deletedRows) {
-            Log::channel('custom')->info(" L'admin ".$req->session()->get('username')." à supprimer un user avec le id ".$req->id);
+            Log::channel('custom')->info(" The admin ".$req->session()->get('username')." deleted a user with user_id ".$req->id.".");
             return redirect('/admin/manageUser');
         } else {
             return back()->with('fail', 'Something went wrong, try again later.');
@@ -115,7 +115,7 @@ class AdminController extends Controller
         $save = Book::where('isbn', $req->isbn)
             ->update(['auteur' => $req->auteur, 'titre' => $req->titre, 'prix' => $req->prix, 'quantite' => $req->quantite, 'photo' => $req->photo, 'resume' => $req->resume]);
         if ($save) {
-            Log::channel('custom')->info(" L'admin ".$req->session()->get('username')." à modifié un livre avec le l'isbn ".$req->isbn);
+            Log::channel('custom')->info(" The admin ".$req->session()->get('username')." updated a book with ISBN: ".$req->isbn.".");
             return back()->with('success', 'Book updated successfully');
         } else {
             return back()->with('fail', 'Something went wrong, try again later.');
@@ -143,7 +143,7 @@ class AdminController extends Controller
         $book->resume = $req->resume;
         $save = $book->save();
         if ($save) {
-            Log::channel('custom')->info(" L'admin ".$req->session()->get('username')." à créé un livre avec le l'isbn ".$req->isbn);
+            Log::channel('custom')->info(" The admin ".$req->session()->get('username')." created a new book with ISBN: ".$req->isbn.".");
             return back()->with('success', 'Book registered successfully');
         } else {
             return back()->with('fail', 'Something went wrong, try again later.');
@@ -158,7 +158,7 @@ class AdminController extends Controller
     {
         $deletedRows = Book::where('isbn', $isbn)->delete();
         if ($deletedRows) {
-            Log::channel('custom')->info(" L'admin ".$req->session()->get('username')." à supprimé un livre avec l'isbn ".$req->isbn);
+            Log::channel('custom')->info(" The admin ".$req->session()->get('username')." deleted a book with ISBN: ".$req->isbn.".");
             return redirect('/admin/manageBooks');
         } else {
             return back()->with('fail', 'Something went wrong, try again later.');
