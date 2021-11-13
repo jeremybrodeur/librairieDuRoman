@@ -20,7 +20,7 @@
     <div class="container">
         <div class="row" style="margin-top:45px">
             <div class="col-md-12 col-md-offset-12">
-                <h4>Test</h4>
+                <h4>Login</h4>
                 <form action="{{ route('auth.check') }}" method="post">
                     @if(Session::get('fail'))
                         <div class="alert alert-danger">

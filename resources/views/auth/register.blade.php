@@ -20,9 +20,14 @@
                     @endif
                     @csrf
                     <div class="form-group">
-                        <label for="name">Name</label>
-                        <input class="form-control" type="text" name="name" id="name" value="{{ old('name')}}">
-                        <span class="text-danger">@error('name'){{ $message }}@enderror</span>
+                        <label for="name">Last Name</label>
+                        <input class="form-control" type="text" name="lname" id="lname" value="{{ old('lname')}}">
+                        <span class="text-danger">@error('lname'){{ $message }}@enderror</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">First Name</label>
+                        <input class="form-control" type="text" name="fname" id="fname" value="{{ old('fname')}}">
+                        <span class="text-danger">@error('fname'){{ $message }}@enderror</span>
                     </div>
                     <div class="form-group">
                         <label for="username">Username</label>

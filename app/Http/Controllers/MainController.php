@@ -27,12 +27,13 @@ class MainController extends Controller
     function save(Request $req)
     {
         $req->validate([
-            'name' => 'required',
+            'lname' => ['required', 'regex:/^[a-zA-Z ]+$/'],
+            'fname' => ['required', 'regex:/^[a-zA-Z ]+$/'],
             'username' => 'required|email|unique:users',
-            'password' => ['required', 'min:8' ,'confirmed', 'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/']
+            'password' => ['required', 'min:8' ,'confirmed', 'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/']
         ]);
         $user = new User();
-        $user->name = $req->name;
+        $user->name = $req->fname + " " + $req->lname;
         $user->username = $req->username;
         $user->password = Hash::make($req->password);
         $save = $user->save();
