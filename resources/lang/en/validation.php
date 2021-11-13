@@ -98,7 +98,7 @@ return [
     'numeric' => 'The :attribute must be a number.',
     'password' => 'The password is incorrect.',
     'present' => 'The :attribute field must be present.',
-    'regex' => 'The :attribute format is invalid. Make sure you have at least one uppercase letter, one lowercase letter, one number and one special character. Ex: Test33!',
+    'regex' => 'The :attribute format is invalid. Make sure you have at least one uppercase letter, one lowercase letter, one number and one special character. Ex: Qwerty1Qwerty!',
     'required' => 'The :attribute field is required.',
     'required_if' => 'The :attribute field is required when :other is :value.',
     'required_unless' => 'The :attribute field is required unless :other is in :values.',
