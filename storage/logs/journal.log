@@ -1,1 +1,12 @@
 [2021-11-13 13:40:20] local.INFO:  L'usager jibro30@hotmail.com logged out.  
+[2021-11-13 13:59:44] local.INFO:  The user wiracleMhipp@gmail.com has been created.  
+[2021-11-13 14:00:08] local.INFO:  The admin jibro30@hotmail.com updated the user with user_id: 8.  
+[2021-11-13 14:00:22] local.INFO:  The admin jibro30@hotmail.com deleted a user with user_id 8.  
+[2021-11-13 14:01:15] local.INFO:  The admin jibro30@hotmail.com updated a book with ISBN: 978197472.  
+[2021-11-13 14:36:00] local.INFO:  The user  logged in successfully.  
+[2021-11-13 14:47:23] local.INFO:  The user  logged out.  
+[2021-11-13 14:47:48] local.INFO:  The user test@test2.com has been created.  
+[2021-11-13 14:50:00] local.INFO:  The admin jibro30@hotmail.com deleted a user with user_id 9.  
+[2021-11-13 14:50:19] local.INFO:  The user jibro30@hotmail.com logged out.  
+[2021-11-13 14:50:32] local.INFO:  The user admin@admin.com logged out.  
+[2021-11-13 14:51:47] local.INFO:  The user  logged in successfully.  
