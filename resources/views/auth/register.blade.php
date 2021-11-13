@@ -37,8 +37,8 @@
 
                     </div>
                     <div class="form-group">
-                        <label for="username">Confirm password</label>
-                        <input class="form-control" type="password" id="confirmPassword">
+                        <label for="password_confirmation">Confirm password</label>
+                        <input class="form-control" type="password" name="password_confirmation" id="password_confirmation">
                         <span class="text-danger">@error('password'){{ $message }}@enderror</span>
                     </div>
                         <input class="btn btn-block btn-light shadow" type="submit" value="Sign up"><br>

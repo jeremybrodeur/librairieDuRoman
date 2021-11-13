@@ -29,7 +29,7 @@ class MainController extends Controller
         $req->validate([
             'name' => 'required',
             'username' => 'required|email|unique:users',
-            'password' => 'required|min:5|max:12'
+            'password' => 'required|min:5|max:16|confirmed'
         ]);
         $user = new User();
         $user->name = $req->name;
