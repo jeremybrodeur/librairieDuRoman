@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row" style="margin-top:45px">
             <div class="col-md-4 col-md-offset-4">
-                <h4>Login | Custom Auth</h4>
+                <h4>Register</h4>
                 <form action="{{ route('auth.save')}}" method="post">
                     @if(Session::get('success'))
                         <div class="alert alert-success">
@@ -39,7 +39,6 @@
                     <div class="form-group">
                         <label for="password_confirmation">Confirm password</label>
                         <input class="form-control" type="password" name="password_confirmation" id="password_confirmation">
-                        <span class="text-danger">@error('password'){{ $message }}@enderror</span>
                     </div>
                         <input class="btn btn-block btn-light shadow" type="submit" value="Sign up"><br>
                         <a href="{{ route('auth.login')}}">Already have an accoutnt? Log in!</a>

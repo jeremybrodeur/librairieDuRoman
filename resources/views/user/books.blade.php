@@ -11,37 +11,33 @@
         </div>
     @endif
     <div id="listeLivre" class="container">
-        <div class="mt-5">
+        <a href="javascript:" id="return-to-top"><i class="fas fa-chevron-up"></i></a>
             @foreach ($allBook as $book)
                 <div class="row shadow my-3">
-                    <div class="text-center col-3">
+                    <div class="text-center py-4 col-3">
                         <img class="img-fluid" src="{{ asset('img/' . $book->photo) }}"
                             alt="{{ $book->titre }}.photo" srcset="">
                     </div>
-                    <div class="text-center col-6 d-flex flex-column align-items-start">
-                        <h4>
-                            {{ $book->titre }}
-                        </h4>
+                    <div class="col d-flex flex-column justify-content-center mt-2">
+                        <h4>{{ $book->titre }}</h4>
                         <cite>de <b>{{ $book->auteur }}</b></cite>
                             ${{ $book->prix }}
-                        @if ($book->quantite > 0)
-                            <div class="font-weight-bold">In stock</div>
-                        </div>
-                        <div class="col pt-4"><a id="addToCart" href="/shopping/add/{{ $book->isbn }}"
-                                class="btn btn-dark shadow">Ajouter au panier</a></div>
-                        </div>
-                        @else
-                            <div id="outOfStock" class="font-weight-bold">Out of stock</div>
+                @if ($book->quantite > 0)
+                        <div class="font-weight-bold">In stock</div>
                     </div>
-                    <div class="col pt-4"><a id="addToCart"
-                            class="btn btn-light disabled shadow">Out of stock</a></div>
+                    <div class="col-3 d-flex align-items-end align-items-center">
+                        <a id="addToCart" href="/shopping/add/{{ $book->isbn }}" class="btn btn-dark shadow">Ajouter au panier</a>
+                    </div>
+                </div>
+                @else
+                        <div id="outOfStock" class="font-weight-bold">Out of stock</div>
+                    </div>
+                    <div class="col-3 d-flex align-items-end align-items-center">
+                        <a id="addToCart" class="btn btn-light disabled shadow">Out of stock</a></div>
                     </div>
                     @endif
 
             @endforeach
-            </tbody>
-        </div>
-    </div>
     </div>
 
 @endsection
