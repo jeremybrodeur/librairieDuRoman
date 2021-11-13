@@ -115,7 +115,8 @@ header {
 #formLivre,
 #listeLivre,
 #formUser,
-#dashboard {
+#dashboard,
+#registerForm {
     padding-bottom: 200px;
 }
 

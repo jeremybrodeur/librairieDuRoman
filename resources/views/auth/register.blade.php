@@ -7,7 +7,7 @@
         <div class="row" style="margin-top:45px">
             <div class="col-md-4 col-md-offset-4">
                 <h4>Register</h4>
-                <form action="{{ route('auth.save')}}" method="post">
+                <form id='registerForm' action="{{ route('auth.save')}}" method="post">
                     @if(Session::get('success'))
                         <div class="alert alert-success">
                             {{Session::get('success')}}
