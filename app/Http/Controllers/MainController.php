@@ -33,7 +33,7 @@ class MainController extends Controller
             'password' => ['required', 'min:8' ,'confirmed', 'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/']
         ]);
         $user = new User();
-        $user->name = $req->fname + " " + $req->lname;
+        $user->name = $req->fname." ".$req->lname;
         $user->username = $req->username;
         $user->password = Hash::make($req->password);
         $save = $user->save();
